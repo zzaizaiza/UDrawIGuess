@@ -46,19 +46,14 @@ npm run dev
 ```
 
 ## Environment Variables
-The backend server requires the following environment variables in the `server/.env` file:
+The backend server requires the following environment variables in the `server\src\controllers\canvas.ts` file:
 
 ```env
-# Server Configuration
-PORT=3000
-NODE_ENV=development
-
-# CORS Configuration
-CLIENT_URL=http://localhost:5173
-
-# OpenAI Configuration
-OPENAI_API_KEY=your_grok_api_key_here
-OPENAI_BASE_URL=https://api.x.ai/v1
+# API Configuration
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY || "GrokAPIKEY",
+  baseURL: process.env.OPENAI_BASE_URL || "https://api.x.ai/v1"
+});
 ```
 
 ### 配置Grok API密钥
@@ -71,7 +66,7 @@ Sure, here's the translation into English:
 2. After logging in, go to the API settings page.
 3. Create a new API key.
 4. Copy the generated API key.
-5. In your project's `\server\src\controllers` file, replace the value of `OPENAI_API_KEY` with your Grok API key.
+5. In your project’s `\server\src\controllers` file, replace the value of `OPENAI_API_KEY` with your Grok API key.
 
 **Note:**
 
